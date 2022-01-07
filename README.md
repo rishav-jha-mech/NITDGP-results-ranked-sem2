@@ -24,3 +24,8 @@ Learnt a lot of things rn btw, you cant use nested loops on files you have to cl
 So i did this for the info and marks file , and now i had infoMap and marksMap, now it was time to loop over them and concatenate them,
 
 i matched the Unique Id i.e registration no. and appended it to resultsMap which has 2nd sem's marks s the key, and contains the following data registration no, section roll no, name and second sem marks, now there are some places where you will find names of some subjects and thats okay, because its of those students who have not given their exams correctly and they dont have their 2nd sem marks so i will have to ignore those cases in the final list which will be ready in next commit, you may think im giving an excuse, but that's not the case, im just telling that i cant be done because i dont have their second sem marks ! (Our Lovely Institute gives us the result in PDF format which you cant sort by any means and that is the reason why im writing some code here!)
+
+
+
+
+Finally now the list is ready, my approach was pretty brute force, but that's who i am, and what i do 😉

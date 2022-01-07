@@ -1,4 +1,6 @@
 import json
+from operator import attrgetter
+
 def rawInfoToReqInfo():
     with open("info.txt", "r",encoding="utf-8") as info:
         print('\n')
@@ -27,6 +29,8 @@ def matchAndCombine():
     infoMap = {}
     marksMap = {}
     resultMap = {}
+    sortedMap = {}
+    finalMap = {}
     with open("infoMod.txt", "r",encoding="utf-8") as infos:
         infoCount = 0
         for info in infos:
@@ -44,5 +48,25 @@ def matchAndCombine():
             y = marksMap[markKey]
             if (x[0]==y[0]):
                 matches += 1
-                resultMap[y[-1]] = x + [str(y[-1])]
+                try:
+                    resultMap[matches] = x + [float(y[-1])]
+                except:
+                    pass
+
+    for result in resultMap:
+        sortedMap = sorted(resultMap, key=lambda x : resultMap[x][-1],reverse=True)
+
+    countResultLoop = 0
+    for result in sortedMap:
+        finalMap[result] = resultMap[result]
+        # print(json.dumps(finalMap,indent=4))
+        f = open("Royal_Mechanical_20-24_2ndSem_Result_Rankwise.txt", "a")
+        listToStr = ' '.join(map(str, finalMap[result]))
+        f.write(f"{listToStr}\n")
+        f.close()
+
+    print("loop ran this many times =>", str(countResultLoop))
+
 matchAndCombine()
+
+# print(sorted(theList))
