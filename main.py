@@ -3,10 +3,10 @@ from operator import attrgetter
 
 def rawInfoToReqInfo():
     with open("info.txt", "r",encoding="utf-8") as info:
-        print('\n')
+        # print('\n')
         for line in info:
             x = line.split()[1:6]
-            print(x)
+            # print(x)
 
             f = open("infoMod.txt", "a")
             listToStr = ' '.join(map(str, x))
@@ -15,10 +15,10 @@ def rawInfoToReqInfo():
 
 def rawInfoToReqMarks():
     with open("marks.txt", "r",encoding="utf-8") as info:
-        print('\n')
+        # print('\n')
         for line in info:
             x = line.split()[1:-1]
-            print(x)
+            # print(x)
 
             f = open("marksMod.txt", "a")
             listToStr = ' '.join(map(str, x))
@@ -56,7 +56,6 @@ def matchAndCombine():
     for result in resultMap:
         sortedMap = sorted(resultMap, key=lambda x : resultMap[x][-1],reverse=True)
 
-    countResultLoop = 0
     for result in sortedMap:
         finalMap[result] = resultMap[result]
         # print(json.dumps(finalMap,indent=4))
@@ -65,6 +64,9 @@ def matchAndCombine():
         f.write(f"{listToStr}\n")
         f.close()
 
+
+rawInfoToReqInfo()
+rawInfoToReqMarks()
 matchAndCombine()
 
 # print(sorted(theList))
