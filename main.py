@@ -65,8 +65,6 @@ def matchAndCombine():
         f.write(f"{listToStr}\n")
         f.close()
 
-    print("loop ran this many times =>", str(countResultLoop))
-
 matchAndCombine()
 
 # print(sorted(theList))
