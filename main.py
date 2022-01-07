@@ -59,7 +59,7 @@ def matchAndCombine():
     for result in sortedMap:
         finalMap[result] = resultMap[result]
         # print(json.dumps(finalMap,indent=4))
-        f = open("BioTechnology_20-24_2ndSem_Result_Rankwise.txt", "a")
+        f = open("Civil_20-24_2ndSem_Result_Rankwise.txt", "a")
         listToStr = ' '.join(map(str, finalMap[result]))
         f.write(f"{listToStr}\n")
         f.close()
