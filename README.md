@@ -7,3 +7,13 @@ the list we want
 registrtion. no, branch roll no. ,section roll no, name,
 
 lets code !
+
+Now i want second sem marks along with registration no and section roll no. sooo....
+
+list we have have
+Unordered serial no, Reg. no, Section Rollno, Name, first sem marks, second sem marks, passed/supply/left some exm
+
+list we want
+Reg. no, Section Rollno, Name, first sem marks, second sem marks,
+
+lets code !
