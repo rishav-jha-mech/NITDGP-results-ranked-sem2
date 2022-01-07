@@ -1,3 +1,4 @@
+import json
 def rawInfoToReqInfo():
     with open("info.txt", "r",encoding="utf-8") as info:
         print('\n')
@@ -21,3 +22,27 @@ def rawInfoToReqMarks():
             listToStr = ' '.join(map(str, x))
             f.write(f"{listToStr}\n")
             f.close()
+
+def matchAndCombine():
+    infoMap = {}
+    marksMap = {}
+    resultMap = {}
+    with open("infoMod.txt", "r",encoding="utf-8") as infos:
+        infoCount = 0
+        for info in infos:
+            infoCount += 1
+            infoMap[infoCount] = info.split()
+    with open("marksMod.txt", "r",encoding="utf-8") as marks:
+        marksCount = 0
+        for mark in marks:
+            marksCount += 1
+            marksMap[marksCount] = mark.split()
+    matches = 0
+    for infoKey in infoMap:
+        x = infoMap[infoKey]
+        for markKey in marksMap:
+            y = marksMap[markKey]
+            if (x[0]==y[0]):
+                matches += 1
+                resultMap[y[-1]] = x + [str(y[-1])]
+matchAndCombine()
